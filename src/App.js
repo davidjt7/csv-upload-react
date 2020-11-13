@@ -11,6 +11,10 @@ class App extends Component {
       selectedFile: null,
       loaded: 0,
       amountsInINR: [],
+      mean: 0,
+      median: 0,
+      minimum: 0,
+      maximum: 0,
       rate: 0,
       timestamp: 0,
       rows: []
@@ -90,7 +94,11 @@ class App extends Component {
     })
       .then(res => {
         this.setState({
-          amountsInINR: res.data.amountsInINR
+          amountsInINR: res.data.amountsInINR,
+          mean: res.data.mean,
+          median: res.data.median,
+          minimum: res.data.minimum,
+          maximum: res.data.maximum,
         })
         toast.success('Uploaded successfully')
       })
@@ -102,7 +110,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <Dashboard onChangeHandler={this.onChangeHandler} onClickHandler={this.onClickHandler} loaded={this.state.loaded} amountsInINR={this.state.amountsInINR} rate={this.state.rate} timestamp={this.state.timestamp} upload={this.state.upload} />
+        <Dashboard onChangeHandler={this.onChangeHandler} onClickHandler={this.onClickHandler} loaded={this.state.loaded} amountsInINR={this.state.amountsInINR} rate={this.state.rate} timestamp={this.state.timestamp} upload={this.state.upload} mean={this.state.mean} median={this.state.median} minimum={this.state.minimum} maximum={this.state.maximum} />
       </div>
     );
   }

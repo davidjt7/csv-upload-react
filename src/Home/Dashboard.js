@@ -9,6 +9,7 @@ import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
 import Orders from './Conversion';
 import Upload from './Upload';
+import InputStats from './InputStats';
 
 
 function Copyright() {
@@ -114,9 +115,14 @@ const Dashboard = props => {
         <div className={classes.appBarSpacer} />
         <Container maxWidth="lg" className={classes.container}>
           <Grid container spacing={3}>
-            <Grid item xs={12} md={12} lg={12}>
+            <Grid item xs={12} md={8} lg={8}>
               <Paper className={classes.paper}>
                 <Upload onChangeHandler={props.onChangeHandler} onClickHandler={props.onClickHandler} loaded={props.loaded} />
+              </Paper>
+            </Grid>
+            <Grid item xs={12} md={4} lg={4}>
+              <Paper className={classes.paper}>
+                <InputStats mean={props.mean} median={props.median} maximum={props.maximum} minimum={props.minimum} rate={props.rate} timestamp={props.timestamp}/>
               </Paper>
             </Grid>
             <Grid item xs={12} md={12} lg={12}>

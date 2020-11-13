@@ -7,7 +7,7 @@ export default function FileUpload(props) {
     return (
         <div class="container">
             <div class="row">
-                <div class="offset-md-3 col-md-6">
+                <div class="offset-md-2 col-md-8">
                     <div class="form-group files">
                         <Title>Upload Your File </Title>
                         <input type="file" class="form-control" multiple onChange={props.onChangeHandler} />
