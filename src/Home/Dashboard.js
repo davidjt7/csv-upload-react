@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import Link from '@material-ui/core/Link';
-import Orders from './Conversion';
+import Conversion from './Conversion';
 import Upload from './Upload';
 import InputStats from './InputStats';
 
@@ -127,7 +127,7 @@ const Dashboard = props => {
             </Grid>
             <Grid item xs={12} md={12} lg={12}>
               <Paper className={classes.paper}>
-                <Orders amountsInINR={props.amountsInINR} rate={props.rate} timestamp={props.timestamp} />
+                <Conversion mean={props.mean} median={props.median} maximum={props.maximum} minimum={props.minimum} amountsInINR={props.amountsInINR} rate={props.rate} timestamp={props.timestamp} />
               </Paper>
             </Grid>
           </Grid>
