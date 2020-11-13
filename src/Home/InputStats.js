@@ -15,6 +15,7 @@ export default function InputStats(props) {
                     <Typography variant="h6">Maximum: {props.maximum}</Typography>
                     <Typography variant="h6">Minimum: {props.minimum}</Typography>
                     <Divider />
+                    <br />
                     <Typography variant="h6">Conversion Rate (INR to USD): {props.rate.toFixed(4)}</Typography>
                     <Typography variant="h6">Date and Time: {(new Date(props.timestamp)).toDateString()} {(new Date(props.timestamp)).toTimeString().substr(0, 8)}</Typography>
                 </div>
